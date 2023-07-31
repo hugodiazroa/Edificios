@@ -39,8 +39,8 @@ void setup() {
     pinMode(SOLENOID_PIN, OUTPUT);
     digitalWrite(SOLENOID_PIN, LOW);
 
-    //we then initialize the serial communication
-    serial.begin(9600);
+    //we then initialize the Serial communication
+    Serial.begin(9600);
     
 }
 
@@ -64,25 +64,25 @@ void loop() {
     Moisture = map(moisture, 0, 1023, 0, 100);
 
     //we then print the data
-    serial.print("Light: ");
-    serial.print(Light);
-    serial.println("%");
-    serial.print("Humidity: ");
-    serial.print(Humidity);
-    serial.println("%");
-    serial.print("Temperature: ");
-    serial.print(Temperature);
-    serial.println("%");
-    serial.print("Moisture: ");
-    serial.print(Moisture);
-    serial.println("%");
-    serial.println(" ");
+    Serial.print("Light: ");
+    Serial.print(Light);
+    Serial.println("%");
+    Serial.print("Humidity: ");
+    Serial.print(Humidity);
+    Serial.println("%");
+    Serial.print("Temperature: ");
+    Serial.print(Temperature);
+    Serial.println("%");
+    Serial.print("Moisture: ");
+    Serial.print(Moisture);
+    Serial.println("%");
+    Serial.println(" ");
     
     //we print the state in which the soleinoid valve is
-    serial.print("Soleinoid valve: ");
+    Serial.print("Soleinoid valve: ");
     if(digitalRead(SOLENOID_PIN) == HIGH){
-        serial.println("ON");} else {
-        serial.println("OFF");
+        Serial.println("ON");} else {
+        Serial.println("OFF");
     }
     
 }
